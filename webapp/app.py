@@ -10,7 +10,7 @@ seed = 9
 np.random.seed(seed)
 
 # Local path: 'model.h5'
-model = load_model('model.h5')
+#model = load_model('model.h5')
 
 graph = tf.get_default_graph()
 
