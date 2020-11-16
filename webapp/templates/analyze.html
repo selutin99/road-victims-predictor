@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="column is-4 is-offset-4">
+        <h3 class="title">Страница анализа</h3>
+        <h5 class="subtitle">Пожалуйста, заполните основные данные</h5>
+        <div class="box">
+            <form method="POST" action="{{ url_for('result') }}">
+
+                <div class="field">
+                    <label class="label">Индекс потребительского доверия</label>
+                    <div class="control">
+                        <input class="input" type="number" name="cci" placeholder="Индекс потребительского доверия" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Композитный индикатор</label>
+                    <div class="control">
+                        <input class="input" type="number" name="cli" placeholder="Композитный индикатор" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Индекс деловой уверенности</label>
+                    <div class="control">
+                        <input class="input" type="number" name="bci" placeholder="Индекс деловой уверенности" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Кол-во сотрудников</label>
+                    <div class="control">
+                        <input class="input" type="number" name="emp_rates" placeholder="Уровень занятости сотрудников" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Оборот запасов</label>
+                    <div class="control">
+                        <input class="input" type="number" name="inv_to_sales" placeholder="Оборот за квартал" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Индекс закупок</label>
+                    <div class="control">
+                        <input class="input" type="number" name="pmi" placeholder="Показатель экономической устойчивости производственного сектора" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Индекс фондового рынка</label>
+                    <div class="control">
+                        <input class="input" type="number" name="sp500" value="1444" placeholder="Индекс фондового рынка" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Авансовый отчет о поставках</label>
+                    <div class="control">
+                        <input class="input" type="number" name="mfg_ord_dur" placeholder="Авансовый отчет о поставках" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Тип разрешения</label>
+                    <div class="control">
+                        <input class="input" type="number" name="bldg_perm" value="1598" placeholder="Тип разрешения" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Розничные продажи</label>
+                    <div class="control">
+                        <input class="input" type="number" name="sales" placeholder="Розничные продажи" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Процентная ставка по федеральным фондам</label>
+                    <div class="control">
+                        <input class="input" type="number" name="fed_funds" placeholder="Процентная ставка по федеральным фондам" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Индекс Dow Jones</label>
+                    <div class="control">
+                        <input class="input" type="number" name="dow_jones" value="13062" placeholder="Индекс Dow Jones" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Платежная ведомость</label>
+                    <div class="control">
+                        <input class="input" type="number" name="payroll" value="137778" placeholder="Платежная ведомость" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Расходы на личное потребление</label>
+                    <div class="control">
+                        <input class="input" type="number" name="pce" placeholder="Расходы на личное потребление" required>
+                    </div>
+                </div>
+
+                <button class="button is-block is-info is-large is-fullwidth">Проанализировать</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
