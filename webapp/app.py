@@ -1,3 +1,5 @@
+from random import randint
+
 import numpy as np
 import tensorflow as tf
 from flask import Flask, request, render_template
@@ -51,7 +53,7 @@ def result():
                                float(result['f_parking']), float(result['t_parking']),
                                float(result['bicyclanes'])]])
             predict_result = predict(array)
-            predict_result = predict_result[0].item()
+            predict_result = predict_result[0].item() + randint(0, 5)
             return render_template("result.html", result=predict_result)
 
 
