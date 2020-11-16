@@ -13,99 +13,262 @@
                             <select name="typ_cod">
                                 <option value="7700">Дорога с физической возможностью движения автомобилей</option>
                                 <option value="7701">Дорога без физической возможности движения автомобилей (пешеходная дорога, проход, тропа, пешеходный переход)</option>
+                                <option value="7702">Внутриквартальный проезд</option>
+                                <option value="7703">Парковочная зона</option>
+                                <option value="7704">Проход внутри здания</option>
+                                <option value="7705">Зимник</option>
+                                <option value="7706">Велодорожка</option>
+                                <option value="7707">Канатная дорога</option>
+                                <option value="7730">Железная дорога</option>
+                                <option value="7740">Трамвайный путь</option>
+                                <option value="7750">Метро</option>
+                                <option value="7751">Пересадка метро</option>
+                                <option value="7750">Метро</option>
+                                <option value="7751">Пересадка метро</option>
+                                <option value="7760">Монорельс</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Композитный индикатор</label>
+                    <label class="label">Категория дороги</label>
                     <div class="control">
-                        <input class="input" type="number" name="cli" placeholder="Композитный индикатор" required>
+                        <div class="select is-primary">
+                            <select name="nlevel">
+                                <option value="2">Федеральные трассы</option>
+                                <option value="3">Основные дороги субъектов РФ и главные улицы населенных пунктов</option>
+                                <option value="4">Значимые дороги субъектов РФ и основные улицы населенных пунктов</option>
+                                <option value="5">Прочие дороги субъектов РФ</option>
+                                <option value="6">Второстепенные дороги субъектов РФ и прочие дороги населенных пунктов</option>
+                                <option value="7">Внутриквартальные проезды и подъезды к POI</option>
+                                <option value="8">Непроезжие проселочные дороги</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Индекс деловой уверенности</label>
+                    <label class="label">Код дороги</label>
                     <div class="control">
-                        <input class="input" type="number" name="bci" placeholder="Индекс деловой уверенности" required>
+                        <div class="select is-primary">
+                            <select name="btf">
+                                <option value="0">Нет</option>
+                                <option value="1">Мост</option>
+                                <option value="2">Понтонный мост</option>
+                                <option value="3">Туннель</option>
+                                <option value="4">Паромная переправа</option>
+                                <option value="5">ЖД переправа</option>
+                                <option value="6">Надземный пешеходный переход</option>
+                                <option value="7">Наземный пешеходный переход</option>
+                                <option value="8">Подземный пешеходный переход</option>
+                                <option value="9">Лестница</option>
+                                <option value="10">Эскалатор</option>
+                                <option value="11">Траволатор</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Кол-во сотрудников</label>
+                    <label class="label">Признак одностороннего движения</label>
                     <div class="control">
-                        <input class="input" type="number" name="emp_rates" placeholder="Уровень занятости сотрудников" required>
+                        <div class="select is-primary">
+                            <select name="oneway">
+                                <option value="0">Нет</option>
+                                <option value="1">Да</option>
+                                <option value="2">Обратное направление (только для общественного транспорта)</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Оборот запасов</label>
+                    <label class="label">Тип поверхности дороги</label>
                     <div class="control">
-                        <input class="input" type="number" name="inv_to_sales" placeholder="Оборот за квартал" required>
+                        <div class="select is-primary">
+                            <select name="surface">
+                                <option value="0">Нет данных</option>
+                                <option value="1">Нет</option>
+                                <option value="2">Асфальт</option>
+                                <option value="3">Рельсы</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Индекс закупок</label>
+                    <label class="label">Разделитель прямого и <br/>обратного направления дороги</label>
                     <div class="control">
-                        <input class="input" type="number" name="pmi" placeholder="Показатель экономической устойчивости производственного сектора" required>
+                        <div class="select is-primary">
+                            <select name="splitter">
+                                <option value="0">Нет</option>
+                                <option value="1">Логический</option>
+                                <option value="2">Физический</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Индекс фондового рынка</label>
+                    <label class="label">Разрешённая скорость движения <br/> по дороге, км/ч</label>
                     <div class="control">
-                        <input class="input" type="number" name="sp500" value="1444" placeholder="Индекс фондового рынка" required>
+                        <input class="input" type="number" name="speedlim" placeholder="Скорость км/ч" min="0" max="130" required>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Авансовый отчет о поставках</label>
+                    <label class="label">Условная расчетная среднесуточная скорость движения по ребру <br/> в прямом направлении, км/ч</label>
                     <div class="control">
-                        <input class="input" type="number" name="mfg_ord_dur" placeholder="Авансовый отчет о поставках" required>
+                        <input class="input" type="number" name="f_rspeed" placeholder="Скорость км/ч" min="0" max="130" required>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Тип разрешения</label>
+                    <label class="label">Условная расчетная среднесуточная скорость движения по ребру в обратном направлении, км/ч</label>
                     <div class="control">
-                        <input class="input" type="number" name="bldg_perm" value="1598" placeholder="Тип разрешения" required>
+                        <input class="input" type="number" name="t_rspeed" placeholder="Скорость км/ч" min="0" max="130" required>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Розничные продажи</label>
+                    <label class="label">Ширина полосы проезжей части, м</label>
                     <div class="control">
-                        <input class="input" type="number" name="sales" placeholder="Розничные продажи" required>
+                        <input class="input" type="number" name="lanewidth" placeholder="Длина м" min="0" max="10" required>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Процентная ставка по федеральным фондам</label>
+                    <label class="label">Количество полос в прямом направлении</label>
                     <div class="control">
-                        <input class="input" type="number" name="fed_funds" placeholder="Процентная ставка по федеральным фондам" required>
+                        <input class="input" type="number" name="f_lanes" placeholder="Количество" min="0" max="10" required>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Индекс Dow Jones</label>
+                    <label class="label">Количество полос в обратном направлении</label>
                     <div class="control">
-                        <input class="input" type="number" name="dow_jones" value="13062" placeholder="Индекс Dow Jones" required>
+                        <input class="input" type="number" name="t_lanes" placeholder="Количество" min="0" max="10" required>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Платежная ведомость</label>
+                    <label class="label">Характеристики тротуара в прямом направлении</label>
                     <div class="control">
-                        <input class="input" type="number" name="payroll" value="137778" placeholder="Платежная ведомость" required>
+                        <div class="select is-primary">
+                            <select name="f_sidewalk">
+                                <option value="0">Нет данных</option>
+                                <option value="1">Нет</option>
+                                <option value="2">Узкий</option>
+                                <option value="3">Средний</option>
+                                <option value="4">Широкий</option>
+                                <option value="5">Существует возможность прохода</option>
+                                <option value="7">Специально оборудованная пешеходная зона</option>
+                                <option value="8">Технический тротуар</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label">Расходы на личное потребление</label>
+                    <label class="label">Характеристики тротуара в обратном направлении</label>
                     <div class="control">
-                        <input class="input" type="number" name="pce" placeholder="Расходы на личное потребление" required>
+                        <div class="select is-primary">
+                            <select name="t_sidewalk">
+                                <option value="0">Нет данных</option>
+                                <option value="1">Нет</option>
+                                <option value="2">Узкий</option>
+                                <option value="3">Средний</option>
+                                <option value="4">Широкий</option>
+                                <option value="5">Существует возможность прохода</option>
+                                <option value="7">Специально оборудованная пешеходная зона</option>
+                                <option value="8">Технический тротуар</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Наличие выделенной полосы для движения общественного транспорта в прямом направлении</label>
+                    <div class="control">
+                        <div class="select is-primary">
+                            <select name="f_buslanes">
+                                <option value="0">Нет</option>
+                                <option value="1">Да</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Наличие выделенной полосы для движения общественного транспорта в обратном направлении</label>
+                    <div class="control">
+                        <div class="select is-primary">
+                            <select name="t_buslanes">
+                                <option value="0">Нет</option>
+                                <option value="1">Да</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Признак дороги, представленной отдельными ребрами для каждого направления движения</label>
+                    <div class="control">
+                        <div class="select is-primary">
+                            <select name="multidigit">
+                                <option value="0">Нет</option>
+                                <option value="1">Да</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Наличие парковки по направлению справа от дороги</label>
+                    <div class="control">
+                        <div class="select is-primary">
+                            <select name="f_parking">
+                                <option value="0">Нет данных</option>
+                                <option value="1">Парковка запрещена</option>
+                                <option value="2">Парковка запрещена по четным</option>
+                                <option value="3">Парковка запрещена по нечетным</option>
+                                <option value="4">Парковка разрешена в крайнем правом ряду</option>
+                                <option value="5">Парковка разрешена в кармане</option>
+                                <option value="6">Парковка разрешена на тротуаре</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Наличие парковки по направлению слева от дороги</label>
+                    <div class="control">
+                        <div class="select is-primary">
+                            <select name="t_parking">
+                                <option value="0">Нет данных</option>
+                                <option value="1">Парковка запрещена</option>
+                                <option value="2">Парковка запрещена по четным</option>
+                                <option value="3">Парковка запрещена по нечетным</option>
+                                <option value="4">Парковка разрешена в крайнем правом ряду</option>
+                                <option value="5">Парковка разрешена в кармане</option>
+                                <option value="6">Парковка разрешена на тротуаре</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Наличие велодорожки</label>
+                    <div class="control">
+                        <div class="select is-primary">
+                            <select name="bicyclanes">
+                                <option value="0">Нет</option>
+                                <option value="1">Справа относительно направления геометрии дороги</option>
+                                <option value="2">Слева относительно направления геометрии дороги</option>
+                                <option value="3">На самой дороге</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 

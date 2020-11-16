@@ -1,5 +1,3 @@
-import random
-
 import numpy as np
 import tensorflow as tf
 from flask import Flask, request, render_template
@@ -10,7 +8,7 @@ seed = 9
 np.random.seed(seed)
 
 # Local path: 'model.h5'
-#model = load_model('model.h5')
+model = load_model('model.h5')
 
 graph = tf.get_default_graph()
 
@@ -41,17 +39,19 @@ def result():
     with graph.as_default():
         if request.method == 'POST':
             result = request.form
-            array = np.array([[2, float(result['cci']),
-                               float(result['cli']), float(result['bci']),
-                               float(result['emp_rates']), float(result['inv_to_sales']),
-                               float(result['pmi']), float(result['sp500']),
-                               float(result['mfg_ord_dur']), float(result['bldg_perm']),
-                               float(result['sales']), float(result['fed_funds']),
-                               float(result['dow_jones']), float(result['payroll']),
-                               float(result['pce'])]])
+            array = np.array([[0, float(result['typ_cod']),
+                               float(result['nlevel']), float(result['btf']),
+                               float(result['oneway']), float(result['surface']),
+                               float(result['splitter']), float(result['speedlim']),
+                               float(result['f_rspeed']), float(result['t_rspeed']),
+                               float(result['lanewidth']), float(result['f_lanes']),
+                               float(result['t_lanes']), float(result['f_sidewalk']),
+                               float(result['t_sidewalk']), float(result['f_buslanes']),
+                               float(result['t_buslanes']), float(result['multidigit']),
+                               float(result['f_parking']), float(result['t_parking']),
+                               float(result['bicyclanes'])]])
             predict_result = predict(array)
-            predict_result = predict_result[0].item() + random.random()
-            predict_result *= 100
+            predict_result = predict_result[0].item()
             return render_template("result.html", result=predict_result)
 
 
